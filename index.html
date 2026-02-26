@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git & GitHub Masterclass - Interactive Learning</title>
+    <meta name="description"
+        content="Learn Git and GitHub step-by-step through a visually stunning and interactive educational platform.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="blob-bg"></div>
+    <div class="blob-bg blob-2"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-brands fa-git-alt"></i> GitMaster
+            </a>
+            <ul class="nav-links">
+                <li><a href="#concepts">Concepts</a></li>
+                <li><a href="#installation">Install</a></li>
+                <li><a href="#commands">Commands</a></li>
+                <li><a href="#simulator">Simulator</a></li>
+                <li><a href="#workflow">Workflow</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="Master Git & GitHub">Master Git & GitHub</h1>
+            <p class="subtitle">An interactive, step-by-step masterclass to version control. Beginner friendly. Visually
+                immersive.</p>
+            <div class="cta-group">
+                <a href="#concepts" class="btn btn-primary">Start Learning <i class="fas fa-arrow-right"></i></a>
+                <a href="#simulator" class="btn btn-secondary">Try Simulator <i class="fas fa-terminal"></i></a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <!-- 3D Git cube visualization handled by CSS/JS -->
+            <div class="cube-container">
+                <div class="cube">
+                    <div class="face front"><i class="fa-brands fa-git-alt"></i></div>
+                    <div class="face back"><i class="fa-brands fa-github"></i></div>
+                    <div class="face right"><i class="fa-solid fa-code-branch"></i></div>
+                    <div class="face left"><i class="fa-solid fa-code-commit"></i></div>
+                    <div class="face top"><i class="fa-solid fa-code-merge"></i></div>
+                    <div class="face bottom"><i class="fa-solid fa-server"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section concepts" id="concepts">
+            <h2 class="section-title">What are they anyway?</h2>
+            <p class="section-desc">Understanding the difference between the tool and the platform.</p>
+
+            <div class="cards-container">
+                <div class="glass-card concept-card tilt-effect">
+                    <div class="card-icon"><i class="fa-brands fa-git-alt"></i></div>
+                    <h3>Git</h3>
+                    <p>Git is a <strong>Version Control System (VCS)</strong>. It is a software you install on your
+                        local computer to track changes in your files over time. It allows you to revert back to
+                        previous states, branch off to try new features, and merge changes together.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Local tool</li>
+                        <li><i class="fa-solid fa-check"></i> Command-line based</li>
+                        <li><i class="fa-solid fa-check"></i> Tracks file history</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card concept-card tilt-effect">
+                    <div class="card-icon"><i class="fa-brands fa-github"></i></div>
+                    <h3>GitHub</h3>
+                    <p>GitHub is a <strong>cloud-based hosting service</strong> that lets you manage Git repositories.
+                        It acts as a central hub where developers can upload their local Git repositories, share them
+                        with others, and collaborate on open-source or private projects.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Cloud service</li>
+                        <li><i class="fa-solid fa-check"></i> Web interface</li>
+                        <li><i class="fa-solid fa-check"></i> Collaboration hub</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section installation" id="installation">
+            <h2 class="section-title">Getting Started</h2>
+            <p class="section-desc">Install Git on your machine to begin.</p>
+
+            <div class="tabs-container glass-panel">
+                <div class="tab-headers">
+                    <button class="tab-btn active" data-target="windows"><i class="fa-brands fa-windows"></i>
+                        Windows</button>
+                    <button class="tab-btn" data-target="mac"><i class="fa-brands fa-apple"></i> macOS</button>
+                    <button class="tab-btn" data-target="linux"><i class="fa-brands fa-linux"></i> Linux</button>
+                </div>
+
+                <div class="tab-content active" id="windows">
+                    <p>Download the official Git for Windows installer.</p>
+                    <a href="https://gitforwindows.org/" target="_blank" class="btn btn-sm btn-outline">Download Git
+                        Bash</a>
+                    <p class="mt-2">Run the `.exe` file and follow the standard installation prompts (the default
+                        settings are recommended for beginners).</p>
+                </div>
+
+                <div class="tab-content" id="mac">
+                    <p>The easiest way is to use Homebrew in your terminal:</p>
+                    <div class="code-block">
+                        <div class="mac-dots"><span></span><span></span><span></span></div>
+                        <pre><code>brew install git</code></pre>
+                        <button class="copy-btn"><i class="far fa-copy"></i></button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="linux">
+                    <p>For Debian/Ubuntu-based distributions:</p>
+                    <div class="code-block">
+                        <div class="mac-dots"><span></span><span></span><span></span></div>
+                        <pre><code>sudo apt-get update
+sudo apt-get install git</code></pre>
+                        <button class="copy-btn"><i class="far fa-copy"></i></button>
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <h3>Initial Configuration</h3>
+                    <p>After installing, set up your identity (this will be attached to your commits):</p>
+                    <div class="code-block">
+                        <div class="mac-dots"><span></span><span></span><span></span></div>
+                        <pre><code>git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section workflow" id="workflow">
+            <h2 class="section-title">The Git Workflow</h2>
+            <p class="section-desc">Visualize how your code travels in Git.</p>
+
+            <div class="workflow-diagram glass-panel">
+                <div class="flow-stage" id="stage-working">
+                    <div class="stage-icon"><i class="fa-regular fa-folder-open"></i></div>
+                    <h4>Working Directory</h4>
+                    <p>Your actual files on your computer.</p>
+                </div>
+                <div class="flow-arrow arrow-add">
+                    <span>git add</span>
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </div>
+                <div class="flow-stage" id="stage-staging">
+                    <div class="stage-icon"><i class="fa-solid fa-box-open"></i></div>
+                    <h4>Staging Area</h4>
+                    <p>Files prepared for commit.</p>
+                </div>
+                <div class="flow-arrow arrow-commit">
+                    <span>git commit</span>
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </div>
+                <div class="flow-stage" id="stage-local">
+                    <div class="stage-icon"><i class="fa-solid fa-hard-drive"></i></div>
+                    <h4>Local Repo</h4>
+                    <p>Committed history on your PC.</p>
+                </div>
+                <div class="flow-arrow arrow-push">
+                    <span>git push</span>
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </div>
+                <div class="flow-stage" id="stage-remote">
+                    <div class="stage-icon"><i class="fa-brands fa-github"></i></div>
+                    <h4>Remote Repo</h4>
+                    <p>Hosted on GitHub.</p>
+                </div>
+                <div class="flow-arrow arrow-pull">
+                    <i class="fas fa-long-arrow-alt-left"></i>
+                    <span>git pull</span>
+                </div>
+            </div>
+
+            <div class="interactive-workflow-controls">
+                <button class="btn btn-sm" onclick="animateWorkflow('add')">Simulate Add</button>
+                <button class="btn btn-sm" onclick="animateWorkflow('commit')">Simulate Commit</button>
+                <button class="btn btn-sm" onclick="animateWorkflow('push')">Simulate Push</button>
+            </div>
+        </section>
+
+        <section class="section commands" id="commands">
+            <h2 class="section-title">Essential Commands Library</h2>
+            <p class="section-desc">Hover or tap cards to flip them and reveal syntax and outputs.</p>
+
+            <div class="commands-grid" id="commands-container">
+                <!-- Commands injected via JS -->
+            </div>
+        </section>
+
+        <section class="section simulator" id="simulator">
+            <h2 class="section-title">Interactive Terminal</h2>
+            <p class="section-desc">Practice Git commands in a safe, simulated environment.</p>
+
+            <div class="simulator-wrapper">
+                <div class="simulator-instructions glass-panel">
+                    <h3>Your Task</h3>
+                    <ul id="sim-task-list">
+                        <li class="active-task">1. Initialize a new repo (<code class="inline-code">git init</code>)
+                        </li>
+                        <li>2. Add a file to staging (<code class="inline-code">git add .</code>)</li>
+                        <li>3. View status (<code class="inline-code">git status</code>)</li>
+                        <li>4. Commit the changes (<code class="inline-code">git commit -m "msg"</code>)</li>
+                    </ul>
+                    <div class="sim-feedback" id="sim-feedback">
+                        Initialize a repository to start.
+                    </div>
+                </div>
+
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="mac-dots"><span></span><span></span><span></span></div>
+                        <div class="terminal-title">user@my-pc:~/project</div>
+                    </div>
+                    <div class="terminal-body" id="terminal-output">
+                        <div class="terminal-line welcome">Welcome to the Git Terminal Simulator.</div>
+                        <div class="terminal-line welcome">Type 'help' to see available commands.</div>
+                    </div>
+                    <div class="terminal-input-line">
+                        <span class="prompt">$</span>
+                        <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section errors" id="errors">
+            <h2 class="section-title">Common Mistakes & Fixes</h2>
+
+            <div class="accordion glass-panel">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4><i class="fa-solid fa-triangle-exclamation text-warning"></i> "Updates were rejected because
+                            the remote contains work that you do not have locally"</h4>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Cause:</strong> Someone else pushed changes to the GitHub repository, and you are
+                            trying to push your own changes without fetching theirs first.</p>
+                        <p><strong>Fix:</strong> Pull the latest changes before pushing.</p>
+                        <div class="code-block small">
+                            <code>git pull origin main<br>git push origin main</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4><i class="fa-solid fa-triangle-exclamation text-warning"></i> "fatal: not a git repository"
+                        </h4>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Cause:</strong> You're trying to run a git command in a folder where Git hasn't been
+                            initialized yet.</p>
+                        <p><strong>Fix:</strong> Initialize git in that folder first.</p>
+                        <div class="code-block small">
+                            <code>git init</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4><i class="fa-solid fa-triangle-exclamation text-warning"></i> Committed to the wrong branch?
+                        </h4>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Fix:</strong> You can quickly undo the last commit but keep your file changes by
+                            doing:</p>
+                        <div class="code-block small">
+                            <code>git reset HEAD~1</code>
+                        </div>
+                        <p>Then switch to the right branch and commit again.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 GitMaster Educational Platform. Built without frameworks.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="index.js"></script>
+</body>
+
+</html>
