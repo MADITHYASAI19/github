@@ -400,8 +400,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (target) target.classList.add('active');
     }
 
-    // --- 9. Glitch Effect on Title ---
-    // The CSS handles the main glitch, JS can add random stutters if needed,
-    // but pure CSS is usually smoother. We are using CSS glitch via ::before/::after usually, 
-    // but if not implemented in CSS, let's keep it static beautiful text.
+    // --- 9. Scroll Entrance Animations ---
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
 });
