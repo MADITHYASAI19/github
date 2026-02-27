@@ -1,3 +1,11 @@
+// Prevent automatic scrolling restoration by the browser
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Ensure the page starts at the very top
+window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. Navigation & Mobile Menu ---
